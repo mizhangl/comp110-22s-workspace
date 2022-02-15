@@ -1,5 +1,4 @@
-"""Happy Valentine's Day from Aperture Science! Creating a Companion Cube.
-And always remember: the cake is a lie!"""
+"""Happy Valentine's Day from Aperture Science! Creating a Companion Cube. And always remember: the cake is a lie!"""
 
 __author__ = "730490943"
 
@@ -9,9 +8,11 @@ colormode(255)
 
 def main() -> None:
     """The entrypoint of my scene.
+
     Note: Functions called in 'main()' must be passed a Turtle expression because each function expects it. 
-    The actual name of the object does not matter, as each function will rename it accordingly. Thus, 'my_turtle', created in 'main()',
-    will be passed through to, say, 'heart()', whereupon it will rename the turtle, for its purposes, as 'turtle'.""" 
+    The actual name of the object does not matter, as each function will rename it accordingly. 
+    Thus, 'my_turtle', created in 'main()', will be passed through to, say, 'heart()', whereupon it will rename the turtle, for its purposes, as 'turtle'.
+    """ 
     my_turtle: Turtle = Turtle()
     tracer(0, 0)
     background(my_turtle, 350)
@@ -23,8 +24,10 @@ def main() -> None:
 
 
 def background(turtle: Turtle, width: int) -> None:
-    """Draws the dark gray background that all other images are superimposed upon. Takes a given width of the square and draws
-    the square accordingly."""
+    """Draws the dark gray background that all other images are superimposed upon.
+
+    Takes a given width of the square and draws the square accordingly.
+    """
     i: int = 0
     turtle.penup()
     turtle.begin_fill()
@@ -78,8 +81,10 @@ def curve(turtle: Turtle) -> None:
 
 
 def pink_rectangle(turtle: Turtle, x: float, y: float) -> None:  
-    """Draws the little pink rectangles that connect the center circle to the outer gray rectangles. 
-    Located using coordinates 'x' and 'y'."""
+    """Draws the little pink rectangles that connect the center circle to the outer gray rectangles.
+    
+    Located using coordinates 'x' and 'y'.
+    """
     turtle.setheading(0.0)
     turtle.color(255, 166, 166)
     horizontal_pink_rectangle(turtle, 20, 50, 85, 70)  # Calls function horizontal_pink_rectangle to draw east most Rectangle.
@@ -89,8 +94,10 @@ def pink_rectangle(turtle: Turtle, x: float, y: float) -> None:
 
 
 def horizontal_pink_rectangle(turtle: Turtle, length: int, width: int, x: float, y: float) -> None:
-    """Function called into 'pink_rectangle' function for efficiency. Takes parameters length and width to create
-    a horizontal rectangle. Also takes coordinates 'x' and 'y' for placement."""
+    """Function called into 'pink_rectangle' function for efficiency.
+    
+    Takes parameters length and width to create a horizontal rectangle. Also takes coordinates 'x' and 'y' for placement.
+    """
     i: int = 0 
     turtle.penup()
     turtle.goto(x, y)
@@ -106,8 +113,10 @@ def horizontal_pink_rectangle(turtle: Turtle, length: int, width: int, x: float,
 
 
 def vertical_pink_rectangle(turtle: Turtle, length: int, width: int, x: float, y: float) -> None:
-    """Function called into 'pink_rectangle' function for efficiency. Takes parameters 'length' and 'width' to create
-    a vertical rectangle. Also takes parameters 'x' and 'y' for placement."""
+    """Function called into 'pink_rectangle' function for efficiency.
+    
+    Takes parameters 'length' and 'width' to create a vertical rectangle. Also takes parameters 'x' and 'y' for placement.
+    """
     i: int = 0
     turtle.penup()
     turtle.goto(x, y)
@@ -124,7 +133,9 @@ def vertical_pink_rectangle(turtle: Turtle, length: int, width: int, x: float, y
 
 def gray_rectangle(turtle: Turtle, x: float, y: float) -> None:
     """Function that creates the smaller gray rectangles that lie at each of the cardinal directions in the image.
-    Takes the coordinates 'x' and 'y' as placement."""
+    
+    Takes the coordinates 'x' and 'y' as placement.
+    """
     turtle.color(241, 240, 241)
     rectangle(turtle, 90, 50, 186, 106, 0.0)  # East most rectangle. 
     rectangle(turtle, 90, 50, -135, 105, 0.0)  # West most rectangle.
@@ -133,9 +144,11 @@ def gray_rectangle(turtle: Turtle, x: float, y: float) -> None:
 
 
 def rectangle(turtle: Turtle, length: int, width: int, x: float, y: float, angle: float) -> None:
-    """Function that is called into 'gray_rectangles' for ease an efficiency. Takes parameters 'length' and 'width', and creates
-    a rectangle corresponding to those dimensions. Also takes parameters 'x', 'y' for coordinates, and 'angle', which orients
-    the rectangle."""
+    """Function that is called into 'gray_rectangles' for ease an efficiency.
+    
+    Takes parameters 'length' and 'width', and creates a rectangle corresponding to those dimensions. 
+    Also takes parameters 'x', 'y' for coordinates, and 'angle', which orients the rectangle.
+    """
     i: int = 0 
     turtle.penup()
     turtle.goto(x, y)
@@ -152,8 +165,11 @@ def rectangle(turtle: Turtle, length: int, width: int, x: float, y: float, angle
 
 
 def quadrants(turtle: Turtle, x: float, y: float) -> None:
-    """Function that creates the four quadrants in each corner of the image. Takes one quadrant created from 'one_quadrant',
-    rotates it to its correct orientation using 'angle', and then places it to where it belongs using coordinates 'x' and 'y'."""
+    """Function that creates the four quadrants in each corner of the image.
+    
+    Takes one quadrant created from 'one_quadrant', rotates it to its correct orientation using 'angle'.  
+    Then, the function places the shape to where it belongs using coordinates 'x' and 'y'.
+    """
     turtle.color(241, 240, 241)
     one_quadrant(turtle, 1.5, 80, 180, 10)  # Top right quadrant.
     one_quadrant(turtle, 1.5, 115, -15, 280)  # Bottom right quadrant.
@@ -161,10 +177,13 @@ def quadrants(turtle: Turtle, x: float, y: float) -> None:
     one_quadrant(turtle, 1.5, -70, -60, -170)  # Bottom left quadrant.
     
 
-def one_quadrant(turtle: Turtle, scale, x: float, y: float, angle: float) -> None:
-    """Function that creates a quadrant and is called into 'quadrants'. Takes the parameter 'scale',
-    which conveys by what magnitude the shape is sized up to. Takes one quadrant and rotates it to its correct
-    orientation using 'angle', and then places it where it belongs using coordinates 'x' and 'y'."""
+def one_quadrant(turtle: Turtle, scale: float, x: float, y: float, angle: float) -> None:
+    """Function that creates a quadrant and is called into 'quadrants'.
+
+    Takes the parameter 'scale', which conveys by what magnitude the shape is sized up to. 
+    Takes one quadrant and rotates it to its correct orientation using 'angle'.  
+    Places shape where it belongs using coordinates 'x' and 'y'.
+    """
     turtle.penup()
     turtle.goto(x, y)
     turtle.setheading(angle)
@@ -177,10 +196,10 @@ def one_quadrant(turtle: Turtle, scale, x: float, y: float, angle: float) -> Non
         i += 1
     turtle.left(90)  # The following set of code creates the outer straight lines that connect to the curve.
     turtle.forward(50 * scale)
-    turtle.left(90)
-    turtle.forward(84 * scale)
-    turtle.left(90)
-    turtle.forward(84 * scale)
+    while i < 102:    
+        turtle.left(90)
+        turtle.forward(84 * scale)
+        i += 1
     turtle.left(90)
     turtle.forward(50 * scale)
     turtle.end_fill()
